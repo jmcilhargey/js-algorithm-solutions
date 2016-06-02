@@ -1,44 +1,38 @@
-function Stack() = {
-	this.items = [];
-}
-
-Stack.prototype.push = function(item) {
-	this.items.push(item);
-};
-
-Stack.prototype.pop = function() {
-	if (!this.items.length) { return null; }
-	return this.items.pop();
-};
-
-Stack.prototype.peek = function() {
-	if (!this.items.length) { return null; }
-	return this.items[this.items.length - 1];
-};
-
-
 function MaxStack() {
-	this.stack = new Stack();
-	this.maxStack = new Stack();
+  this.items = [];
+  this.maxItems = [];  
 }
 
 MaxStack.prototype.push = function(item) {
-	this.stack.push(item);
-
-	if (this.maxStack.peek() <= item || !this.maxStack.peek()) {
-		this.maxStack.push(item);
-	}
+  
+  if (!maxItems.peek() || maxItems.peek() < item) {
+    this.maxItems.push(item);
+  }
+  this.items.push(item);
+  return item;
 };
 
-MaxStack.prototype.pop = function() {
-	var item = this.stack.pop();
-
-	if (item === this.stack.peek()) {
-		this.maxStack.pop();
-	}
-	return item;
+Stack.prototype.pop = function() {
+  
+  if (!this.items.length) {
+    return null;
+  }
+  var poppedItem = this.items.pop();
+  
+  if (poppedItem === this.maxItems.peek()) {
+    this.maxItems.pop();
+  }
+  return poppedItem;
 };
 
-Maxstack.prototype.getMax = function() {
-	return this.maxStack.peek();
+Stack.prototype.peek = function() {
+  
+  if (!this.items.length) {
+    return null;
+  }
+  return this.items[this.items.length -1];
+};
+
+Stack.prototype.getMax = function() {
+  return this.maxItems.peek();
 };

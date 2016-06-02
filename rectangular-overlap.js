@@ -10,5 +10,6 @@ function findRangeOverlap(point1, length1, point2, length2) {
 	var overlapWidth = highestStartPoint - lowestEndPoint;
 
 	return { startPoint: highestStartPoint, width: overlapWidth };
-
 }
+
+function findRectangleOverlap(rect1, rect2) {}

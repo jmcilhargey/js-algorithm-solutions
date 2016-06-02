@@ -65,5 +65,5 @@ function balancedBinaryTreeRecursive(node, upperBound, lowerBound) {
 /*    return bstCheckerRecursive(treeRoot.left, lowerBound, treeRoot.value) &&
            bstCheckerRecursive(treeRoot.right, treeRoot.value, upperBound);
 
-*/
+*/ 
 
