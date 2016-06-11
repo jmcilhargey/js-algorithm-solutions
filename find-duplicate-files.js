@@ -1,3 +1,36 @@
+const fs = require("fs");
+const crypto = require("crypto");
+
+
+function findDuplicateFiles(rootDirectory) {
+
+    var listOfFilesSeen = {};
+
+    var fileSysStack = [];
+    fileSysStack.push(rootDirectory);
+
+    var arrayOfDups = [];
+
+    while (fileSysStack.length) {
+
+        var currentPath = fileSysStack.pop();
+        // This returns information about the file path
+        var currentFile = fs.statSync(currentPath);
+
+        if (currentFile.isDirectory()) {
+            // Returns an array of filenames
+            var contentsOfDir = fs.readdirSync(currentPath);
+
+            contentsOfDir.forEach(function(fileName) {
+                fileSysStack.push()
+            });
+        }
+    }
+
+
+}
+
+
   const fs = require('fs');
 const crypto = require('crypto');
 
